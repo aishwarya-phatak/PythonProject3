@@ -1,16 +1,25 @@
-# This is a sample Python script.
+from Employee1 import Employee1
+from Person import Person
+from Student import Student
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+#polymorphism - run time binding
+def introduce(person):
+    person.displayDetails()
 
+personObj = Person("Pallavi","454523236767",
+                   "Female","B+")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+studentObj1 = Student("Nikita","4542356767","Female",
+                      "A+",2387,98,"AI")
 
+studentObj2 = Student("Snehal","909067678989","Female",
+                      "AB+",67543,76,"AI")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+introduce(personObj)
+introduce(studentObj1)
+introduce(studentObj2)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(" {}".format(isinstance(personObj, Person)))
+print(" {}".format(isinstance(studentObj1, Student)))
+print(" {}".format(isinstance(studentObj2, Person)))
+print(" {}".format(isinstance(studentObj2, Employee1)))
